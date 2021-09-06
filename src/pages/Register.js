@@ -66,7 +66,9 @@ export default function SignUp(props) {
     setPassword(e.target.value)
   }
 
-  const handleRegister = () => {
+  const handleRegister = (e) => {
+    e.preventDefault();
+
     const user = {
       firstName, lastName, email, username, phoneNumber, password
     }
@@ -89,7 +91,7 @@ export default function SignUp(props) {
         <Typography component="h1" variant="h5">
           Register
         </Typography>
-        <form className={classes.form} noValidate onSubmit={handleRegister}>
+        <form className={classes.form} noValidate onSubmit={(e) => handleRegister(e)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField

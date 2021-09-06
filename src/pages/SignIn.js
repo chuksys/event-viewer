@@ -51,7 +51,9 @@ export default function SignIn(props) {
     setPassword(e.target.value)
   }
 
-  const handleSignIn = () => {
+  const handleSignIn = (e) => {
+    e.preventDefault();
+
     Auth.login(email, password, () => {
       props.history.push("/list")
     }, handleOpenSnackBar)
@@ -77,7 +79,7 @@ export default function SignIn(props) {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate onSubmit={handleSignIn}>
+        <form className={classes.form} noValidate onSubmit={(e) => handleSignIn(e)}>
           <TextField
             variant="outlined"
             margin="normal"
