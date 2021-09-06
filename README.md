@@ -10,6 +10,10 @@ Data Storage was implemented using LocalStorage.
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install Dependencies.
+
 ### `npm start`
 
 Runs the app in the development mode.\
