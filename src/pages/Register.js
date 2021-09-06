@@ -39,6 +39,7 @@ export default function SignUp(props) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
 
   const handleFirstNameChange = e => {
@@ -57,13 +58,17 @@ export default function SignUp(props) {
     setUsername(e.target.value)
   }
 
+  const handlePhoneNumberChange = e => {
+    setPhoneNumber(e.target.value)
+  }
+
   const handlePasswordChange = e => {
     setPassword(e.target.value)
   }
 
   const handleRegister = () => {
     const user = {
-      firstName, lastName, email, username, password
+      firstName, lastName, email, username, phoneNumber, password
     }
 
     Auth.register(user, () => {
@@ -137,6 +142,19 @@ export default function SignUp(props) {
                 value={username}
                 onChange={handleUsernameChange}
                 autoComplete="Username"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="phone"
+                label="Phone Number"
+                name="phoneNumber"
+                value={phoneNumber}
+                onChange={handlePhoneNumberChange}
+                autoComplete="Phone Number"
               />
             </Grid>
             <Grid item xs={12}>
