@@ -1,6 +1,6 @@
 # Event Viewer Single Page Application built with ReactJS
 
-A Single Page Application that enables a user to create, edit and delete events.
+A Single Page Application that enables a user to create, edit and delete and list events.
 
 Application also has Register and Login functionalities.
 
